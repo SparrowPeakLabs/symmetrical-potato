@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Verification Meta Tags -->
+  <title>Sparrow Peak Labs | Technology Organization</title>
+  <meta name="title" content="Sparrow Peak Labs | Technology Organization">
+  <meta name="description" content="Sparrow Peak Labs is a digital technology organization focused on software engineering, product development, and modern digital solutions.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sparrow Peak Labs">
+  <meta property="og:description" content="Official organization portal for Sparrow Peak Labs.">
+
+  <!-- Clean Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --text-light: #94a3b8;
+      --accent: #2563eb;
+      --accent-soft: #eff6ff;
+      --accent-border: #bfdbfe;
+      --border: #e2e8f0;
+      --border-subtle: #f1f5f9;
+      --success: #16a34a;
+      --success-soft: #f0fdf4;
+      --success-border: #bbf7d0;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1.15rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--text-main);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      background: var(--accent);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      background: var(--success-soft);
+      color: var(--success);
+      border: 1px solid var(--success-border);
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--success);
+      border-radius: 50%;
+    }
+
+    /* Main */
+    main {
+      flex: 1;
+      padding: 3rem 0 4rem 0;
+    }
+
+    /* Hero */
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 2rem;
+    }
+
+    .entity-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(1.85rem, 3.5vw, 2.35rem);
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--text-main);
+      margin-bottom: 0.85rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Section Headings */
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    /* Grid of Pillars */
+    .operations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .op-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .op-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+    }
+
+    .op-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Corporate Information Table */
+    .info-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.75rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 2rem;
+    }
+
+    .info-row {
+      display: flex;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.925rem;
+    }
+
+    .info-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .info-row:first-child {
+      padding-top: 0;
+    }
+
+    .info-label {
+      width: 200px;
+      color: var(--text-muted);
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+
+    .info-val {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 1.75rem 0;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-top: auto;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Modals */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.45);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      z-index: 100;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      max-width: 580px;
+      width: 100%;
+      padding: 2rem;
+      position: relative;
+      max-height: 85vh;
+      overflow-y: auto;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .modal-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .modal-card h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin: 1rem 0 0.35rem 0;
+    }
+
+    .modal-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: #f1f5f9;
+      color: var(--text-muted);
+      border: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .modal-close:hover {
+      background: #e2e8f0;
+      color: var(--text-main);
+    }
+
+    @media (max-width: 600px) {
+      .info-row {
+        flex-direction: column;
+      }
+      .info-label {
+        width: 100%;
+        margin-bottom: 0.15rem;
+      }
+      .hero-card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">
+          <div class="logo-mark">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3L2 19H8L12 12L16 19H22L12 3Z" fill="currentColor"/>
+            </svg>
+          </div>
+          <span>Sparrow Peak Labs</span>
+        </a>
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>Active Organization</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main>
+    <div class="container">
+
+      <!-- Organization Overview -->
+      <section class="hero-card">
+        <span class="entity-tag">Technology Entity</span>
+        <h1>Sparrow Peak Labs</h1>
+        <p class="lead">
+          Sparrow Peak Labs is a dedicated software and digital technology organization focused on product engineering, application development, and modern digital solutions.
+        </p>
+      </section>
+
+      <!-- Scope of Operations -->
+      <h2 class="section-title">Core Operations</h2>
+      <div class="operations-grid">
+        <div class="op-card">
+          <h3>Software Engineering</h3>
+          <p>Design, implementation, and maintenance of dependable web applications and software systems.</p>
+        </div>
+        <div class="op-card">
+          <h3>Product Development</h3>
+          <p>Architecting user-centered digital solutions with modern, scalable web and cloud standards.</p>
+        </div>
+        <div class="op-card">
+          <h3>Technical Solutions</h3>
+          <p>Evaluation, system design, and practical software implementation for digital workflows.</p>
+        </div>
+      </div>
+
+      <!-- Verified Entity Information -->
+      <h2 class="section-title">Organizational Profile</h2>
+      <div class="info-card">
+        <div class="info-row">
+          <div class="info-label">Organization Name</div>
+          <div class="info-val">Sparrow Peak Labs</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Industry</div>
+          <div class="info-val">Software & Digital Technology</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Operational Status</div>
+          <div class="info-val">Active / In Good Standing</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Jurisdiction / Location</div>
+          <div class="info-val">West Bengal, India</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>© 2026 Sparrow Peak Labs. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="javascript:void(0)" id="privacyLink">Privacy Policy</a>
+          <a href="javascript:void(0)" id="termsLink">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Privacy Policy Modal -->
+  <div class="modal-backdrop" id="privacyModal">
+    <div class="modal-card">
+      <button class="modal-close" id="closePrivacy">&times;</button>
+      <h3>Privacy Policy</h3>
+      <h4>1. General Overview</h4>
+      <p>Sparrow Peak Labs operates this informational website to provide authentic organizational details and verification data. We are committed to maintaining straightforward and transparent privacy practices.</p>
+
+      <h4>2. Information Practices</h4>
+      <p>This website functions as a static informational portal. It does not automatically harvest personal consumer data, track visitors across third-party networks, or distribute visitor information.</p>
+
+      <h4>3. Official Communication</h4>
+      <p>Any organizational records or correspondence conducted in connection with official platform verifications are processed strictly for business authentication purposes.</p>
+    </div>
+  </div>
+
+  <!-- Terms of Service Modal -->
+  <div class="modal-backdrop" id="termsModal">
+    <div class="modal-card">
+      <button class="modal-close" id="closeTerms">&times;</button>
+      <h3>Terms of Service</h3>
+      <h4>1. Acceptance</h4>
+      <p>By accessing this web portal, you acknowledge the informational nature of this website for Sparrow Peak Labs.</p>
+
+      <h4>2. Proprietary Rights</h4>
+      <p>All organizational identifiers, name marks, and textual descriptions presented on this website are the property of Sparrow Peak Labs.</p>
+
+      <h4>3. Purpose</h4>
+      <p>This web presence is maintained to outline organization identity, operational scope, and official entity standing.</p>
+    </div>
+  </div>
+
+  <script>
+    // Modal handlers
+    const privacyModal = document.getElementById('privacyModal');
+    const termsModal = document.getElementById('termsModal');
+    const privacyLink = document.getElementById('privacyLink');
+    const termsLink = document.getElementById('termsLink');
+    const closePrivacy = document.getElementById('closePrivacy');
+    const closeTerms = document.getElementById('closeTerms');
+
+    const openModal = (m) => m.classList.add('active');
+    const closeModal = (m) => m.classList.remove('active');
+
+    privacyLink.addEventListener('click', () => openModal(privacyModal));
+    termsLink.addEventListener('click', () => openModal(termsModal));
+    closePrivacy.addEventListener('click', () => closeModal(privacyModal));
+    closeTerms.addEventListener('click', () => closeModal(termsModal));
+
+    window.addEventListener('click', (e) => {
+      if (e.target === privacyModal) closeModal(privacyModal);
+      if (e.target === termsModal) closeModal(termsModal);
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeModal(privacyModal);
+        closeModal(termsModal);
+      }
+    });
+  </script>
+</body>
+</html>
